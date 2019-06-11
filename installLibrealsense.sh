@@ -161,9 +161,16 @@ else
     exit 1
   fi
 fi
+
+
 echo "${green}Installing librealsense, headers, tools and demos${reset}"
 sudo make install
 echo "${green}Library Installed${reset}"
+
+echo -e "export PYTHONPATH=$PYTHONPATH:/usr/local/lib" >> ~/.bashrc
+source ~/.bashrc
+echo "Be sure that the python path /usr/local/bin is in the bashrc file"
+
 echo " "
 echo " -----------------------------------------"
 echo "The library is installed in /usr/local/lib"
